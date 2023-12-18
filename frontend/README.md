@@ -1,0 +1,19 @@
+- App.jsx
+-
+- This is the main entry point for our React application.
+-
+- Key Features:
+- - It uses the `react-router-dom` library to set up routing for the application.
+- - It defines three routes: the root route ("/"), the "editStudent" route, and the "addStudent" route.
+- - The root route uses the `getStudents` function to load data and displays the `Dashboard` component.
+- - The "editStudent" and "addStudent" routes display the `FormPage` component.
+- - If there's an error loading data for the root or "editStudent" routes, the `ErrorPage` component is displayed.
+-
+- Components:
+- - Dashboard: Displays the main page of the application.
+- - FormPage: Displays a form for editing or adding a student.
+- - ErrorPage: Displays an error message.
+-
+- Functions:
+- - getStudents: Fetches a list of students from the server.
+-
