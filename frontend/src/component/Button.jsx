@@ -1,9 +1,9 @@
 import React, { Children } from "react";
 
-const Button = ({ variant, children }) => {
+const Button = ({ variant, children, ...rest }) => {
   const primary = {
-    width: "146px",
-    height: "50px",
+    width: "100px",
+    height: "35px",
     flexShrink: 0,
     borderRadius: "30px",
     background: "#000",
@@ -23,7 +23,11 @@ const Button = ({ variant, children }) => {
     },
   };
 
-  return <button style={primary}>{children}</button>;
+  return (
+    <button style={primary} {...rest}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;
