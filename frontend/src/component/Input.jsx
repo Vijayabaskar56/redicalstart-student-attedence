@@ -1,18 +1,22 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
-const Input = ({ student, setterfunction, lable }) => {
+const Input = ({ defaultValue, setterfunction, lable }) => {
   return (
     <>
-      <Form.Label className="form-label">{lable}</Form.Label>
-      <Form.Control
-        height="50px"
-        type="text"
-        defaultValue={student ? student.lastName : null}
-        className="form-input"
-        placeholder="Last Name"
-        onChange={(e) => setterfunction(e.target.value)}
-      />
+      <Form.Group className="mb-3" id="name-inputs" controlId="formBasicEmail">
+        <div className="input-cointainer">
+          <Form.Label className="form-label">{lable}</Form.Label>
+          <Form.Control
+            height="50px"
+            type="text"
+            defaultValue={defaultValue}
+            className="form-input"
+            placeholder={`${lable}`}
+            onChange={(e) => setterfunction(e.target.value)}
+          />
+        </div>
+      </Form.Group>
     </>
   );
 };

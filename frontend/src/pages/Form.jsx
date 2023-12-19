@@ -6,6 +6,7 @@ import { useLocation, useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import { addStudent, updateStudent } from "../utils";
 import { useState } from "react";
+import Input from "../component/Input";
 
 const FormPage = () => {
   const locations = useLocation();
@@ -79,53 +80,28 @@ const FormPage = () => {
             id="name-inputs"
             controlId="formBasicEmail"
           >
-            <div className="input-cointainer">
-              <Form.Label className="form-label">First Name</Form.Label>
-              <Form.Control
-                defaultValue={student !== null ? student.name : null}
-                type="text"
-                className="form-input"
-                placeholder="First Name"
-                onChange={(e) => setFirstName(e.target.value)}
-              />
-            </div>
-            <div className="input-cointainer">
-              <Form.Label className="form-label">Last Name</Form.Label>
-              <Form.Control
-                height="50px"
-                type="text"
-                defaultValue={student ? student.lastName : null}
-                className="form-input"
-                placeholder="Last Name"
-                onChange={(e) => setLastName(e.target.value)}
-              />
-            </div>
+            <Input
+              lable={"First Name"}
+              setterfunction={setFirstName}
+              defaultValue={student ? student.name : null}
+            />
+            <Input
+              lable={"Last Name"}
+              setterfunction={setLastName}
+              defaultValue={student ? student.lastName : null}
+            />
           </Form.Group>
           <div className="form-2-cointainer">
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <div className="input-cointainer">
-                <Form.Label className="form-label">Location</Form.Label>
-                <Form.Control
-                  type="text"
-                  defaultValue={student ? student.location : null}
-                  className="form-input"
-                  placeholder="location"
-                  onChange={(e) => setLocation(e.target.value)}
-                />
-              </div>
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <div className="input-cointainer">
-                <Form.Label className="form-label">Email</Form.Label>
-                <Form.Control
-                  type="email"
-                  defaultValue={student ? student.email : null}
-                  className="form-input"
-                  placeholder="Email"
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-            </Form.Group>
+            <Input
+              lable={"Location"}
+              setterfunction={setLocation}
+              defaultValue={student ? student.location : null}
+            />
+            <Input
+              lable={"Email"}
+              setterfunction={setEmail}
+              defaultValue={student ? student.email : null}
+            />
             <Form.Group>
               <div className="input-cointainer">
                 <Form.Label className="form-label">DOB</Form.Label>
@@ -154,18 +130,11 @@ const FormPage = () => {
                 </div>
               </div>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <div className="input-cointainer">
-                <Form.Label className="form-label">Education</Form.Label>
-                <Form.Control
-                  type="text"
-                  className="form-input"
-                  defaultValue={student ? student.education : null}
-                  placeholder="Education"
-                  onChange={(e) => setEducation(e.target.value)}
-                />
-              </div>
-            </Form.Group>
+            <Input
+              lable={"Education"}
+              setterfunction={setEducation}
+              defaultValue={student ? student.education : null}
+            />
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <div className="input-cointainer">
                 <Form.Label className="form-label">About</Form.Label>
@@ -182,7 +151,6 @@ const FormPage = () => {
               </div>
             </Form.Group>
           </div>
-
           <Button variant="primary" type="submit">
             Submit
           </Button>

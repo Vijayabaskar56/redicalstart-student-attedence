@@ -4,9 +4,10 @@ import Button from "../component/Button";
 import Tables from "../component/Table";
 import { useLoaderData, useNavigate } from "react-router";
 import { StudentProvider } from "../context/studentcontext";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { SearchBar } from "../component/SearchBar";
 import { SearchResultsList } from "../component/SearchBarResultList";
+import Loader from "../component/Loader";
 const Dashboard = () => {
   const navigator = useNavigate();
   const studensdata = useLoaderData();
@@ -36,9 +37,11 @@ const Dashboard = () => {
           </div>
         </section>
         <section>
-          <StudentProvider value={{ students, setStudents }}>
-            <Tables />
-          </StudentProvider>
+          <Suspense fallback={<Loader />}>
+            <StudentProvider value={{ students, setStudents }}>
+              <Tables />
+            </StudentProvider>
+          </Suspense>
         </section>
       </main>
       {/* <footer className="footer">
