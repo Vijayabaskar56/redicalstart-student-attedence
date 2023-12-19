@@ -27,13 +27,10 @@ const FormPage = () => {
         dateArr = date.split("-");
       }
       const day = dateArr[2].slice(0, 2);
-      console.log(dateArr);
 
       return [day, dateArr[1], dateArr[0]];
     };
     dates = formatedate(student.dob);
-
-    console.log(student, dates);
   }
 
   const [firstName, setFirstName] = useState(student ? student.name : "");
@@ -55,13 +52,10 @@ const FormPage = () => {
       education,
       about,
     };
-    console.log(formData);
     if (locations.state == null) {
       const res = await addStudent(formData);
-      console.log(res);
     } else {
       const res = await updateStudent(student.id, formData);
-      console.log(res);
     }
     navigator("/");
   };

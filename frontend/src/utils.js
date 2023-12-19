@@ -1,5 +1,4 @@
 const URL = import.meta.env.VITE_API_URL;
-console.log(URL);
 
 export const getStudents = async () => {
   const response = await fetch(`${URL}/getstudents`);
