@@ -8,7 +8,15 @@ const updateStudent = (Students) => {
     }
     try {
       await Students.update(
-        { name, email, lastName, about, education, dob, location },
+        {
+          name,
+          email,
+          lastName,
+          about,
+          education,
+          dob: new Date(dob),
+          location,
+        },
         { where: { id: id } }
       );
       res.status(200).json({ message: "Student updated" });

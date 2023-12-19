@@ -26,7 +26,9 @@ const {
   updateStudent,
 } = require("./controller/index.js");
 const corsOptions = {
-  origin: "http://localhost:5173" || "*",
+  origin: function (origin, callback) {
+    callback(null, true);
+  },
   methods: ["GET", "POST", "PUT", "DELETE"], // Allow all methods
   allowedHeaders: ["Content-Type", "Authorization"], // Allow all headers
 };

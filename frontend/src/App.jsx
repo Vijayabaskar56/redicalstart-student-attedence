@@ -8,7 +8,6 @@ import {
 import FormPage from "./pages/Form";
 import { getStudents } from "./utils";
 import ErrorPage from "./pages/Error";
-import { Suspense } from "react";
 
 function App() {
   const route = createBrowserRouter(

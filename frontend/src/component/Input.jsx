@@ -1,5 +1,5 @@
-import React from "react";
 import { Form } from "react-bootstrap";
+import PropsTYpes from "prop-types";
 
 const Input = ({ defaultValue, setterfunction, lable }) => {
   return (
@@ -22,3 +22,9 @@ const Input = ({ defaultValue, setterfunction, lable }) => {
 };
 
 export default Input;
+
+Input.propTypes = {
+  defaultValue: PropsTYpes.string,
+  setterfunction: PropsTYpes.func,
+  lable: PropsTYpes.string,
+};

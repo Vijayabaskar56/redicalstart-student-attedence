@@ -3,7 +3,8 @@ const addStudent = (Students) => {
     try {
       const { name, email, lastName, about, education, location } = req.body;
       console.log(req.body);
-      const studentExist = await Students.findOne({ email });
+      const studentExist = await Students.findOne({ where: { email: email } });
+      console.log(studentExist);
       if (studentExist) {
         return res.status(400).json({ error: "Student already exists" });
       }
@@ -11,7 +12,7 @@ const addStudent = (Students) => {
       const student = await Students.create({
         name,
         email,
-        dob: new Date(),
+        dob: new Date(dob),
         lastName,
         about,
         education,
