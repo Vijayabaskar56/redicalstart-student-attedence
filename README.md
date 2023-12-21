@@ -2,6 +2,8 @@
 
 This project is a full-stack application that provides a platform for managing student data.
 
+Deployed Link : https://redicalstart-student-attedence.vercel.app/
+
 ## Frontend
 
 - Used React, React-router's and Bootstrap
