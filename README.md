@@ -2,27 +2,19 @@
 
 This project is a full-stack application that provides a platform for managing student data.
 
-Deployed Link : https://redicalstart-student-attedence.vercel.app/
+Deployed Link: https://redicalstart-student-attedence.vercel.app/
 
-API_LINK : https://studentmanagement-ihcn.onrender.com/
 
 ## Frontend
 
-- Used React, React-router's and Bootstrap
+- Used React, React-router and Bootstrap
 
 ## Backend
 
-| note : I first made a server using superbase with postgres data base by using sequelize ORM, that was this one, then after the feedback to use mysql I create a server with mysql
-
-- postsqlserver
-- - Sequelize ORM
-- - Superbase for backend with postgreSql
+- server
 - - express.js server
+- - MySQL as a database
 
-- sqlserver
-- - express.js server
-- - mysql as a database
-- - no ORM is used
 
 ## API Endpoints
 
